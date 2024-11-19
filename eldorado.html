@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ELDORADO</title>
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style22.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+  <header>
+    <h1>ELDORADO</h1>
+    <nav class="navbar">
+      <a href="acceuil.html" class="nav-link" >Accueil</a>
+  </nav>
+</header>
+    
+    <fieldset>
+        <legend><h3>Description :</h3></legend>
+        <p>C’est une peinture décorative moderne et raffinée. Elle offre deux effets qui dérivent de l’or brut qui sont l’Or et l’Argent. Le résultat obtenu est extraordinaire. ELDORADO est un produit de haute qualité lavable qui peut être combiné avec tout type de peinture à l’eau.
+       </p> <br><br>
+         <center><img class="a" src="img/eldora.jpg" class="center" width="500px"></center>
+         <main><p><strong>Prix:</strong> <br>-ELDORADO : 1 Kg/65dt <span>(remise 5%)</span> <br>-ELDORADO LIGHT: 1kg/65dt <span>(remise 5%)</span></p>
+         <p>La semaine prochaine, la remise augmentera de 15 %.<br>
+         (Livraison gratuit) contactez-nous à notre page : <a href="https://www.facebook.com/SridiThaher">page facebook</a> </p>
+     </main>
+     
+     
+     </fieldset>
+     <br><footer><br><br><br>
+     <address class="y">Rue kairawen en face café bouneb , 4070 Msaken, Tunisia <br>
+     Email for booking :stepeinturesridi@gmail.com <br>
+     Tel: 52 282 624</address>
+     </footer>
+
+<script>
+// JavaScript code
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const images = document.querySelectorAll(".catalog-img");
+const closeBtn = document.querySelector(".close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+let currentIndex;
+
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      currentIndex = index;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+  lightboxImg.src = images[currentIndex].src;
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+  lightboxImg.src = images[currentIndex].src;
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+      lightbox.style.display = "none";
+  }
+});
+
+</script>
+</body>
+</html> 
